@@ -28,7 +28,7 @@ set expandtab
 """ Filetype specifics
 autocmd BufWritePre *.py execute ':Black'
 autocmd Filetype javascript setlocal shiftwidth=2 softtabstop=2
-autocmd Filetype markdown execute ':set tw=79'
+autocmd Filetype markdown execute ':set tw=72'
 autocmd Filetype markdown execute ':set fo-=l'
 
 """ Lightline
