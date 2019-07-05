@@ -30,7 +30,6 @@ autocmd BufWritePre *.py execute ':Black'
 autocmd Filetype javascript setlocal shiftwidth=2 softtabstop=2
 autocmd Filetype markdown execute ':set tw=72'
 autocmd Filetype markdown execute ':set fo-=l'
-autocmd Filetype markdown execute ':set fo+=a'
 
 """ Lightline
 set laststatus=2
