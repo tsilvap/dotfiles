@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'godlygeek/tabular'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'lepture/vim-jinja'
 Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
@@ -19,6 +20,12 @@ call plug#end()
 """ Line numbers
 set number
 
+""" Color scheme
+set background=dark
+colorscheme hybrid_material
+let g:enable_bold_font = 1
+let g:enable_italic_font = 1
+
 """ Indentation
 filetype indent on
 set tabstop=8
@@ -27,18 +34,19 @@ set shiftwidth=4
 set expandtab
 
 """ Filetype specifics
-autocmd Filetype html,css,scss,javascript,vue setlocal shiftwidth=2 softtabstop=2
+autocmd Filetype html,jinja.html,css,scss,javascript,vue,vuejs setlocal shiftwidth=2 softtabstop=2
 autocmd Filetype markdown execute ':set tw=72'
 autocmd Filetype markdown execute ':set fo-=l'
 
 """ ALE
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': 'eslint',
-\   'json': 'fixjson',
+\   'javascript': ['eslint'],
+\   'json': ['fixjson'],
 \   'vue': ['eslint'],
-\   'scss': 'stylelint',
-\   'python': 'black',
+\   'vuejs': ['eslint'],
+\   'scss': ['stylelint'],
+\   'python': ['autopep8', 'isort', 'black'],
 \}
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
@@ -46,6 +54,7 @@ let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_filetype_changed = 0
 let g:ale_fix_on_save = 1
+let g:ale_python_pylint_options = '--load-plugins pylint_django'
 nmap <F8> <Plug>(ale_fix)
 
 """ Lightline
