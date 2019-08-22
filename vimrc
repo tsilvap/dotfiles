@@ -7,6 +7,7 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'lepture/vim-jinja'
 Plug 'mattn/emmet-vim'
 Plug 'morhetz/gruvbox'
+Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
 Plug 'posva/vim-vue'
@@ -14,6 +15,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'vim-python/python-syntax'
+Plug 'vim-ruby/vim-ruby'
 Plug 'w0rp/ale'
 call plug#end()
 
@@ -34,7 +36,7 @@ set shiftwidth=4
 set expandtab
 
 """ Filetype specifics
-autocmd Filetype html,jinja.html,css,scss,javascript,vue,vuejs setlocal shiftwidth=2 softtabstop=2
+autocmd Filetype html,jinja.html,css,scss,javascript,vue,vuejs,markdown setlocal shiftwidth=2 softtabstop=2
 autocmd Filetype markdown execute ':set tw=72'
 autocmd Filetype markdown execute ':set fo-=l'
 
