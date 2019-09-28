@@ -30,7 +30,7 @@ let g:enable_italic_font = 1
 
 """ Indentation
 filetype indent on
-set tabstop=8
+set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -49,6 +49,7 @@ let g:ale_fixers = {
 \   'vuejs': ['eslint'],
 \   'scss': ['stylelint'],
 \   'python': ['autopep8', 'isort', 'black'],
+\   'go': ['gofmt']
 \}
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
